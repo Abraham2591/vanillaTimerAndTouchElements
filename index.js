@@ -57,10 +57,10 @@ function updownTimer(){
   var timeTotal = (parseFloat(inputHrs) * 60 * 60) + (parseFloat(inputMin) * 60) + parseFloat(inputSec) + 1;
 
   intervalId = setInterval(function() {
-    if(timeTotal > 0){
+    if(timeTotal > 0 && timeTotal < 360001){
       timeTotal--;
       
-      var outHrs = Math.floor(timeTotal / 60  / 60) % 60;
+      var outHrs = Math.floor(timeTotal / 60  / 60);
       var outMin = Math.floor(timeTotal / 60) % 60;
       var outSec = Math.floor(timeTotal % 60);
 
