@@ -53,6 +53,18 @@ function updownTimer(){
   document.getElementById("inputMin").disabled = true;
   document.getElementById("inputSec").disabled = true;
   document.getElementById("startBtn").disabled = true;
+
+  if(inputHrs === ""){
+    inputHrs = "00"
+  }
+
+  if(inputMin === ""){
+    inputMin = "00"
+  }
+
+  if(inputSec === ""){
+    inputSec = "00"
+  }
   
   var timeTotal = (parseFloat(inputHrs) * 60 * 60) + (parseFloat(inputMin) * 60) + parseFloat(inputSec) + 1;
 
