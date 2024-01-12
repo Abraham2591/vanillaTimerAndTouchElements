@@ -166,7 +166,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 #myBtn:hover{
-    font-size: 21px;
+    font-size: 20px;
     background-color: rgb(19, 241, 19);
     cursor: pointer;
     box-shadow: 1px 1px rgb(248, 225, 98);
@@ -244,7 +244,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 }
 
 #arDiv{
-    margin-top: -6%;
+    margin-top: -18%;
     margin-left: 43%;
     margin-right: 43%;
     margin-bottom: 40%;
