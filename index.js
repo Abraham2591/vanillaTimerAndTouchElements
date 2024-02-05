@@ -8,6 +8,7 @@ const upBtn = document.querySelector("#upBtn");
 const leftBtn = document.querySelector("#leftBtn");
 const rightBtn = document.querySelector("#rightBtn");
 const downBtn = document.querySelector("#downBtn");
+const spaceBtn = document.querySelector("#spaceBtn");
 
 
 
@@ -19,6 +20,7 @@ upBtn.addEventListener("click", ydirUp);
 leftBtn.addEventListener("click", xdirLeft);
 rightBtn.addEventListener("click", xdirRight);
 downBtn.addEventListener("click", ydirDown);
+spaceBtn.addEventListener("click", spacebarBtn);
 document.getElementById("dragDiv").addEventListener('mousedown', mouseDown, false);
 window.addEventListener('mouseup', mouseUp, false);
 
@@ -179,4 +181,52 @@ function divMove(e){
   dragDiv.style.position = 'absolute';
   dragDiv.style.top = e.clientY + 'px';
   dragDiv.style.left = e.clientX + 'px';
+}
+
+
+function moveProjectile(projectile) {
+  let projectilePosition = y + (478 - ((61 * 100) / window.innerHeight)); // Start at the bottom of the screen
+
+  function animate() {
+      projectilePosition -= 15.5; // Adjust the speed as needed
+      projectile.style.top = projectilePosition + "px";
+
+      // Check if the projectile has reached the top
+      if (projectilePosition <= 0) {
+          // Remove the projectile
+          projectile.remove();
+      } else {
+          // Continue moving
+          requestAnimationFrame(animate);
+      }
+  }
+
+  animate();
+}
+
+// Listen for spacebar key press
+document.addEventListener("keydown", (event) => {
+  if (event.code === "Space") {
+      // Create a new projectile
+      const newProjectile = document.createElement("div");
+      newProjectile.id = "projectile";
+      newProjectile.style.left = x + 35 + "px"; // moveDiv x position
+      newProjectile.style.top = y + "px"; // moveDiv y position
+      document.body.appendChild(newProjectile);
+
+      // Start moving the projectile
+      moveProjectile(newProjectile);
+  }
+});
+
+function spacebarBtn(event) {
+  // Create a new projectile
+  const newProjectile = document.createElement("div");
+  newProjectile.id = "projectile";
+  newProjectile.style.left = x + 35 + "px"; // moveDiv x position
+  newProjectile.style.top = y + "px"; // moveDiv y position
+  document.body.appendChild(newProjectile);
+
+  // Start moving the projectile
+  moveProjectile(newProjectile);
 }
