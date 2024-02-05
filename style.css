@@ -25,6 +25,38 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     cursor: pointer;
 }
 
+#projectile {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: rgb(67, 116, 67);
+}
+
+#spaceDiv{
+    margin-top: -45%;
+    margin-left: 65%;
+    margin-right: 43%;
+    margin-bottom: 40%;
+    overflow: hidden;
+    width: 112px;
+    height: 112px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+#spaceBtn{
+    height: 35px;
+    width: 110px;
+    font-size: 22px;
+    background-color: gold;
+    color: rgb(80, 18, 138);
+    border-radius: 7px;
+}
+
 #timeDiv{
     border-radius: 12px;
     margin-top: 6%;
@@ -179,7 +211,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
     margin-left: 0px;
     padding: 10px;
     border: 2px solid;
-    background-color: rgb(105, 182, 105);
+    background-color: rgb(67, 116, 67);
     width: 61px;
     height: 61px;
     border-radius: 7px;
@@ -245,7 +277,7 @@ html, body {margin: 0; height: 100%; overflow: hidden}
 
 #arDiv{
     margin-top: -18%;
-    margin-left: 43%;
+    margin-left: 30%;
     margin-right: 43%;
     margin-bottom: 40%;
     overflow: hidden;
